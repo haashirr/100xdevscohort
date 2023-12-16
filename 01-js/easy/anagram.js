@@ -5,7 +5,16 @@
 */
 
 function isAnagram(str1, str2) {
+  if(str1.length!=str2.length) {
+      return false;
+  }
+  str1 = str1.replace(/\s+/g, '').toLowerCase();
+  str2 = str2.replace(/\s+/g, '').toLowerCase();
+  const sorted_str1 = str1.split('').sort().join('');
+  const sorted_str2 = str2.split('').sort().join('');
 
+  return sorted_str1 == sorted_str2;
 }
-
+//console.log("sana","anas");
+console.log(isAnagram("Debit Card", "Bad Credit"));
 module.exports = isAnagram;

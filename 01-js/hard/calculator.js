@@ -16,6 +16,65 @@
   Once you've implemented the logic, test your code by running
 */
 
-class Calculator {}
+class Calculator {
+  constructor() {
+    this.result=0;
+  }
+  add(num) {
+    this.result+=num;
+    return this;
+  }
+  subtract(num) {
+    this.result-=num;
+    return this;
+  }
+  multiply(num) {
+    this.result *= num;
+    return this;
+  }
+  divide(num) {
+    if(num==0) {
+      throw new Error('Division by zero is not possible');
+    }
+    this.result /= num;
+    return this;
+  }
+  clear() {
+    this.result = 0;
+    return this;
+  }
+  getResult() {
+    return this.result;
+  }
+  calculate(exp) {
+    const new_exp = exp.replace(/\s+/g, '');
+    if(/[^0-9+\-*/().]/.test(new_exp)) {
+      throw new Error("Invalid expression.");
+    }
+    if (new_exp.includes('/0')) {
+      throw new Error('Division by zero is not possible');
+  }
+    try {
+      this.result = eval(new_exp);
+      return this.result;
+    }
+    catch(e) {
+      throw new Error("Error evaluating expression.");
+    }
+  }
+}
+const calc = new Calculator();
+//calc.add(5);
+//console.log(calc.getResult()); 
+//calc.subtract(2);
+//console.log(calc.getResult());  
 
+//calc.multiply(3);
+//console.log(calc.getResult()); 
+
+//calc.divide(3);
+//console.log(calc.getResult());  
+
+// Test complex expression
+//console.log(calc.calculate("10 + 2 * (6 - (4 + 1)) + 7")); 
 module.exports = Calculator;
