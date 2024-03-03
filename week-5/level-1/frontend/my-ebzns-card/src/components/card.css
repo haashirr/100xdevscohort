@@ -1,0 +1,41 @@
+/* Card.css */
+
+.card {
+    border: 1px solid #ddd; /* A subtle border */
+    border-radius: 5px;      /* Slightly rounded corners */
+    padding: 20px;           /* Padding within the card */
+    margin-bottom: 20px;     /* Space between cards */
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1); /* A subtle shadow effect */
+}
+
+.card h1 {
+    font-size: 1.4em;         /* Make the name stand out */
+    margin-bottom: 10px; 
+}
+
+.card p {
+    margin-bottom: 15px;      /* Some spacing below description */
+}
+
+.socials {
+    display: flex;            /* Arrange social icons horizontally */
+    gap: 10px;                /* Space between icons */
+}
+
+.socials a {
+    color: #333;              /* A basic link color */
+    text-decoration: none;    /* Remove default underline */
+}
+
+.socials a:hover {
+    color: #007bff;           /* Example hover color (like the default for Bootstrap) */
+}
+
+.interests {
+    margin-top: 15px;         /* Space above the interests */
+}
+
+.interests ul {
+    list-style-type: disc;    /* Use bullets for the list */
+    padding-left: 20px;       /* Indent the list items */
+}
